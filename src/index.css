@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+@import "swiper/css/effect-coverflow";
+@import "swiper/css/effect-fade";
+@import "swiper/css/effect-creative";
+@import "swiper/css/autoplay";
+
+@theme {
+  --font-playfair: "Playfair Display", "serif";
+  --font-montserrat: "Montserrat", "sans-serif";
+  --color-primary: #03193a;
+  --color-primary-50: #1a3157;
+  --color-primary-100: #152e54;
+  --color-primary-200: #12294a;
+}
