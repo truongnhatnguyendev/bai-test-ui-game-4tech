@@ -3,11 +3,12 @@ import { LuCalendarClock, LuGamepad2 } from "react-icons/lu";
 
 import { ICONS, IMAGES } from "assets";
 import { useTranslation } from "react-i18next";
+import "./about.css";
 
 export const AboutUs = () => {
   const { t } = useTranslation();
   return (
-    <section className="max-w-6xl mx-auto flex flex-col sm:gap-10 gap-5">
+    <section className="max-w-6xl mx-auto flex flex-col sm:gap-20 gap-5">
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
         {/* Left Content */}
         <div className="p-5 sm:p-0">
@@ -73,16 +74,20 @@ export const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="sm:mt-55 mt-44">
-        <div className="relative">
+      <div className="sm:mt-96 mt-44">
+        <div className="relative sm:h-[428px]">
           <img
             src={IMAGES.map}
             alt="map"
-            className="w-full h-auto object-cover"
+            className="w-full h-full sm:object-cover object-contain"
           />
-          <div className="sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-1/2 sm:-top-50 sm:left-0 top-[-130px] translate-x-1/4 left-0">
+          {/* <div className="sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-2/3 sm:-top-92 sm:-left-10 top-[-160px] translate-x-1/4 left-0">
+            <img src={IMAGES.lllustrator} alt="lllustrator" />
+          </div> */}
+          <div className="sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-2/3 sm:-top-92 sm:-left-10 top-[-160px] translate-x-1/4 left-0 animate-slide-in-floating">
             <img src={IMAGES.lllustrator} alt="lllustrator" />
           </div>
+
           <div className="absolute top-0 left-0 w-[18px] translate-x-[100%] translate-y-[100%]">
             <img
               src={ICONS.location}
@@ -115,7 +120,7 @@ export const AboutUs = () => {
             />
           </div>
           <div
-            className="flex absolute bottom-50 h-[100px] w-full"
+            className="flex absolute bottom-10 h-[100px] w-full"
             style={{
               background:
                 "linear-gradient(180deg, rgba(255, 255, 255, 0) -26.4%, #FFFFFF 82.58%)",

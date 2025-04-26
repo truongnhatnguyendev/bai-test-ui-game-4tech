@@ -1,0 +1,32 @@
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw); /* Bắt đầu ngoài màn hình bên phải */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingXY {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -10px);
+  }
+  50% {
+    transform: translate(10px, 0px);
+  }
+  75% {
+    transform: translate(5px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.animate-slide-in-floating {
+  animation: slideInRight 2s ease-out forwards,
+    /* 2s đầu tiên bay từ phải qua */ floatingXY 6s ease-in-out infinite 2s; /* Sau đó mới bắt đầu floating lặp lại */
+}
