@@ -4,11 +4,32 @@ import { LuCalendarClock, LuGamepad2 } from "react-icons/lu";
 import { ICONS, IMAGES } from "assets";
 import { useTranslation } from "react-i18next";
 import "./about.css";
+import { useEffect, useRef, useState } from "react";
 
 export const AboutUs = () => {
   const { t } = useTranslation();
+  const illustratorRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect(); // chỉ observe 1 lần
+        }
+      },
+      { threshold: 0.1 } // thấy 10% là chạy
+    );
+
+    if (illustratorRef.current) {
+      observer.observe(illustratorRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <section className="max-w-6xl mx-auto flex flex-col sm:gap-20 gap-5">
+    <section className="max-w-6xl mx-auto flex flex-col sm:gap-20 gap-5 sm:overflow-visible overflow-hidden">
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-10">
         {/* Left Content */}
         <div className="p-5 sm:p-0">
@@ -81,10 +102,12 @@ export const AboutUs = () => {
             alt="map"
             className="w-full h-full sm:object-cover object-contain"
           />
-          {/* <div className="sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-2/3 sm:-top-92 sm:-left-10 top-[-160px] translate-x-1/4 left-0">
-            <img src={IMAGES.lllustrator} alt="lllustrator" />
-          </div> */}
-          <div className="sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-2/3 sm:-top-92 sm:-left-10 top-[-160px] translate-x-1/4 left-0 animate-slide-in-floating">
+          <div
+            ref={illustratorRef}
+            className={`sm:w-[533px] sm:h-[437px] w-[300px] h-[243px] flex absolute sm:translate-x-2/3 sm:-top-92 sm:-left-10 top-[-160px] translate-x-1/4 left-0 ${
+              inView ? "animate-slide-in-floating" : "opacity-0"
+            }`}
+          >
             <img src={IMAGES.lllustrator} alt="lllustrator" />
           </div>
 

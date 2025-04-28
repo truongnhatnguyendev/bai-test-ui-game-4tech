@@ -1,6 +1,6 @@
 @keyframes slideInRight {
   0% {
-    transform: translateX(100vw); /* Bắt đầu ngoài màn hình bên phải */
+    transform: translateX(95%); /* Bắt đầu ngoài màn hình bên phải */
     opacity: 0;
   }
   100% {
