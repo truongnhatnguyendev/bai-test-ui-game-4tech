@@ -111,35 +111,46 @@ export const AboutUs = () => {
             <img src={IMAGES.lllustrator} alt="lllustrator" />
           </div>
 
-          <div className="absolute top-0 left-0 w-[18px] translate-x-[100%] translate-y-[100%]">
+          <div className="absolute sm:top-[6%] top-[20%] left-[21%] sm:w-[52px] w-7">
             <img
               src={ICONS.location}
-              alt="iconmap1"
-              className="w-full h-full rotate-12"
+              alt="iconmap4"
+              className="w-full h-full -rotate-20"
             />
           </div>
-
-          <div className="absolute top-0 left-0 w-[33px] sm:translate-x-[300px] sm:translate-y-[345px]">
-            <img
-              src={ICONS.location}
-              alt="iconmap2"
-              className="w-full h-full"
-            />
-          </div>
-
-          <div className="absolute top-0 left-0 w-[43px] sm:translate-x-[730px] sm:translate-y-[200px]">
+          <div className="absolute sm:top-[10%] top-[25%] left-[60%] sm:w-[43px] w-5">
             <img
               src={ICONS.location}
               alt="iconmap3"
               className="w-full h-full"
             />
           </div>
-
-          <div className="absolute top-0 left-0 w-[52px] sm:translate-x-[250px] sm:translate-y-[200px]">
+          <div className="absolute top-[50%] left-[30%] sm:w-[33px] w-4 ">
             <img
               src={ICONS.location}
-              alt="iconmap4"
+              alt="iconmap2"
               className="w-full h-full"
+            />
+          </div>
+          <div className="absolute sm:top-[20%] top-[35%] left-[70%] sm:w-[18px] w-2">
+            <img
+              src={ICONS.location}
+              alt="iconmap1"
+              className="w-full h-full rotate-12"
+            />
+          </div>
+          <div className="absolute sm:top-[40%] top-[45%] left-[75%] sm:w-[18px] w-2">
+            <img
+              src={ICONS.location}
+              alt="iconmap5"
+              className="w-full h-full rotate-12"
+            />
+          </div>
+          <div className="absolute sm:top-[30%] top-[35%] left-[65%] sm:w-[18px] w-2">
+            <img
+              src={ICONS.location}
+              alt="iconmap6"
+              className="w-full h-full rotate-12"
             />
           </div>
           <div

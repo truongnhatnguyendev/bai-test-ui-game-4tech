@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { deadlineService } from "services/deadline/deadline.service";
 
 export const CountdownTimer = () => {
   const { t } = useTranslation();
-  // 👉 Set deadline (ví dụ 30 ngày sau)
-  const deadline = new Date();
-  deadline.setDate(deadline.getDate() + 30);
 
-  const calculateTimeLeft = () => {
+  const [deadline, setDeadline] = useState<Date | null>(null);
+
+  const calculateTimeLeft = (deadline: Date) => {
     const difference = deadline.getTime() - new Date().getTime();
 
     let timeLeft = {
@@ -29,15 +29,31 @@ export const CountdownTimer = () => {
     return timeLeft;
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
+    // Call API để lấy deadline
+    deadlineService.getDeadline().then((resp) => {
+      setDeadline(resp);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!deadline) return;
+
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(deadline));
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [deadline]);
+
+  if (!deadline) return <div>Loading...</div>;
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center">
