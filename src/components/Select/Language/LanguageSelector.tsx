@@ -5,6 +5,7 @@ import { IMAGES } from "assets";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useOutsideClick } from "hooks/useOutsideClick";
 import i18n from "i18n";
+import { LazyImage } from "components/Image";
 
 const languages = [
   {
@@ -47,7 +48,7 @@ export function LanguageSelector() {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 bg-transparent px-2 py-1"
       >
-        <img
+        <LazyImage
           src={currentLang?.flag}
           alt={currentLang?.label}
           className="w-6 h-6"
@@ -71,7 +72,7 @@ export function LanguageSelector() {
                 <FaCheck className="text-black w-3 h-3" />
               )}
               {selected !== lang.code && <div className="w-3 h-3" />}
-              <img src={lang.flag} alt={lang.label} className="w-6 h-6" />
+              <LazyImage src={lang.flag} alt={lang.label} className="w-6 h-6" />
               <span className="text-sm text-black">{lang.label}</span>
             </div>
           ))}

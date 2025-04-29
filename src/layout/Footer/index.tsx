@@ -5,6 +5,7 @@ import { FaFacebookSquare, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import { BsArrowRight } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import { LazyImage } from "components/Image";
 
 const Icons = [
   { label: "Twitter", to: "/", icon: FaTwitter },
@@ -31,7 +32,7 @@ export const Footer = () => {
         {/* Logo & Social */}
         <div className="flex flex-col gap-6 w-[163px] justify-center items-center mx-auto md:items-start md:mx-0">
           <div className="w-[163px] h-[96px] items-center">
-            <img src={IMAGES.logo} alt="logo" className="w-full h-full" />
+            <LazyImage src={IMAGES.logo} alt="logo" className="w-full h-full" />
           </div>
           <div className="flex justify-between gap-4">
             {Icons.map((item, index) => (

@@ -6,6 +6,7 @@ import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import { useScrollTo } from "hooks/useScrollTo";
 import { useTranslation } from "react-i18next";
+import { LazyImage } from "components/Image";
 
 export const Header = () => {
   const { t } = useTranslation();
@@ -127,7 +128,7 @@ export const Header = () => {
           </div>
         </div>
         {/* <div className="flex absolute sm:bottom-3 sm:left-0 sm:translate-0 sm:w-[838px] sm:h-[838px] w-[343px] h-[343px] left-1/2 -translate-x-1/4 -bottom-49 ">
-          <img src={IMAGES.fairy} alt="" className="w-full h-full" />
+          <LazyImage src={IMAGES.fairy} alt="" className="w-full h-full" />
         </div> */}
         {isOpen && (
           <div className="fixed inset-0 bg-white z-50 flex flex-col px-6 py-4">
@@ -161,7 +162,7 @@ export const Header = () => {
       </header>
       <div className="relative h-[808px] overflow-hidden">
         <div className="flex z-10 absolute sm:top-0 sm:left-0 sm:translate-0 sm:w-[838px] sm:h-[838px] w-[343px] h-[343px] left-1/2 -translate-x-1/4 top-88 ">
-          <img src={IMAGES.fairy} alt="" className="w-full h-full" />
+          <LazyImage src={IMAGES.fairy} alt="" className="w-full h-full" />
         </div>
       </div>
     </div>

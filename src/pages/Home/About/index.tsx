@@ -5,6 +5,7 @@ import { ICONS, IMAGES } from "assets";
 import { useTranslation } from "react-i18next";
 import "./about.css";
 import { useEffect, useRef, useState } from "react";
+import { LazyImage } from "components/Image";
 
 export const AboutUs = () => {
   const { t } = useTranslation();
@@ -97,7 +98,7 @@ export const AboutUs = () => {
       </div>
       <div className="sm:mt-96 mt-44">
         <div className="relative sm:h-[428px]">
-          <img
+          <LazyImage
             src={IMAGES.map}
             alt="map"
             className="w-full h-full sm:object-cover object-contain"
@@ -108,46 +109,46 @@ export const AboutUs = () => {
               inView ? "animate-slide-in-floating" : "opacity-0"
             }`}
           >
-            <img src={IMAGES.lllustrator} alt="lllustrator" />
+            <LazyImage src={IMAGES.lllustrator} alt="lllustrator" />
           </div>
 
           <div className="absolute sm:top-[6%] top-[20%] left-[21%] sm:w-[52px] w-7">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap4"
               className="w-full h-full -rotate-20"
             />
           </div>
           <div className="absolute sm:top-[10%] top-[25%] left-[60%] sm:w-[43px] w-5">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap3"
               className="w-full h-full"
             />
           </div>
           <div className="absolute top-[50%] left-[30%] sm:w-[33px] w-4 ">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap2"
               className="w-full h-full"
             />
           </div>
           <div className="absolute sm:top-[20%] top-[35%] left-[70%] sm:w-[18px] w-2">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap1"
               className="w-full h-full rotate-12"
             />
           </div>
           <div className="absolute sm:top-[40%] top-[45%] left-[75%] sm:w-[18px] w-2">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap5"
               className="w-full h-full rotate-12"
             />
           </div>
           <div className="absolute sm:top-[30%] top-[35%] left-[65%] sm:w-[18px] w-2">
-            <img
+            <LazyImage
               src={ICONS.location}
               alt="iconmap6"
               className="w-full h-full rotate-12"
