@@ -131,7 +131,7 @@ export const Header = () => {
           <LazyImage src={IMAGES.fairy} alt="" className="w-full h-full" />
         </div> */}
         {isOpen && (
-          <div className="fixed inset-0 bg-white z-50 flex flex-col px-6 py-4">
+          <div className="fixed inset-0  bg-white z-50 flex flex-col px-6 py-4">
             <div className="flex justify-between items-center">
               <LanguageSelector />
               <button

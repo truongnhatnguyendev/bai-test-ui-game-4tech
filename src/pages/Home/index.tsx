@@ -48,7 +48,7 @@ export function Home() {
     <main className="space-y-8">
       <button
         onClick={handleClick}
-        className="bg-white rounded-full z-50 shadow-lg fixed top-1/2  right-5 h-12 w-12 flex items-center justify-center focus:outline-none"
+        className="bg-white rounded-full z-40 shadow-lg fixed top-1/2  right-5 h-12 w-12 flex items-center justify-center focus:outline-none"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
